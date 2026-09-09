@@ -6,7 +6,21 @@
  * fictício é enviado ou carregado enquanto não forem preenchidos.
  */
 
-export const siteConfig = {
+interface SiteConfig {
+  brand: { name: string; logoUrl: string; logoAlt: string; region: string };
+  whatsapp: { number: string; message: string };
+  contact: { phone: string; email: string; address: string };
+  webhookUrl: string;
+  tracking: {
+    gtmId: string;
+    ga4Id: string;
+    googleAdsId: string;
+    googleAdsConversionLabel: string;
+    metaPixelId: string;
+  };
+}
+
+export const siteConfig: SiteConfig = {
   brand: {
     name: "Starblu",
     /**
@@ -51,7 +65,7 @@ export const siteConfig = {
     googleAdsConversionLabel: "", // AW-XXXXXXXXX/xxxxxxxxxxxxx
     metaPixelId: "", // 000000000000000
   },
-} as const;
+};
 
 export type LeadService =
   | "Medicina Ocupacional"
