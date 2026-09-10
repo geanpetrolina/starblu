@@ -1,14 +1,10 @@
-import { Building2, CalendarClock, Quote } from "lucide-react";
+import { Building2, CalendarClock, Quote, Star } from "lucide-react";
 
 import { Reveal } from "@/components/starblu/Reveal";
 import { SectionHeading } from "@/components/starblu/SectionHeading";
 
 /**
- * Depoimentos reais da Starblu.
- *
- * Mantenha vazio até ter os depoimentos autorizados em mãos. Nada é
- * inventado aqui: sem itens, a seção exibe apenas as provas validadas
- * e um espaço reservado editável.
+ * Depoimentos reais da Starblu — avaliações públicas do Google.
  */
 interface Testimonial {
   quote: string;
@@ -16,7 +12,25 @@ interface Testimonial {
   company: string;
 }
 
-const testimonials: Testimonial[] = [];
+const testimonials: Testimonial[] = [
+  {
+    quote:
+      "Atendimento rápido e prático, como deve ser, tanto na recepção quanto em meu exame admissional. Além disso, recebemos um café quentinho ao entrar, pela recepcionista!",
+    author: "Gustavo Lepinski",
+    company: "Avaliação no Google",
+  },
+  {
+    quote: "Sempre fiz meus exames lá e nunca tive problemas. Estão de parabéns.",
+    author: "Jonathan",
+    company: "Avaliação no Google",
+  },
+  {
+    quote:
+      "Muito bom o atendimento, equipe qualificada, estão todos de parabéns. Localização muito boa com amplo estacionamento. Gratidão pela atenção de todos.",
+    author: "Michael Matias Saturno",
+    company: "Avaliação no Google",
+  },
+];
 
 /**
  * Logos reais de clientes. Coloque os arquivos em `public/` e liste-os
