@@ -1,14 +1,9 @@
-import { BadgeCheck, Gavel, Landmark, Stethoscope, UserRound } from "lucide-react";
+import { BadgeCheck, Gavel, Landmark, Mic, Stethoscope, UserRound } from "lucide-react";
 
+import retratoAsset from "@/assets/dr-jadir-retrato.jpg.asset.json";
+import palestraAsset from "@/assets/dr-jadir-palestra.jpg.asset.json";
 import { Reveal } from "@/components/starblu/Reveal";
 import { SectionHeading } from "@/components/starblu/SectionHeading";
-
-/**
- * Foto oficial do Dr. Jadir.
- * Coloque o arquivo em `public/` (ex.: "/dr-jadir.jpg") e informe aqui.
- * Vazio = exibe o espaço reservado, sem imagem fictícia.
- */
-const DOCTOR_PHOTO_URL = "";
 
 const credentials = [
   { icon: Stethoscope, label: "Médico especialista em Medicina do Trabalho" },
@@ -21,38 +16,42 @@ const credentials = [
 export function TechnicalAuthority() {
   return (
     <section id="autoridade" className="bg-background py-16 lg:py-24">
-      <div className="shell grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+      <div className="shell grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
         <Reveal className="order-2 lg:order-1">
-          <div className="relative mx-auto max-w-sm overflow-hidden rounded-3xl border border-border bg-surface shadow-card">
-            {DOCTOR_PHOTO_URL ? (
+          <div className="relative mx-auto max-w-sm">
+            <div className="overflow-hidden rounded-3xl border border-border bg-surface shadow-card">
               <img
-                src={DOCTOR_PHOTO_URL}
-                alt="Dr. Jadir, Diretor Técnico da Starblu"
-                width={640}
-                height={800}
+                src={retratoAsset.url}
+                alt="Dr. Jadir dos Santos Lima, Diretor Técnico da Starblu, no consultório da empresa"
+                width={1920}
+                height={1078}
                 loading="lazy"
                 decoding="async"
-                className="aspect-[4/5] w-full object-cover"
+                className="aspect-[4/5] w-full object-cover object-[52%_top]"
               />
-            ) : (
-              <div
-                data-photo-placeholder="foto-oficial-dr-jadir"
-                className="flex aspect-[4/5] w-full flex-col items-center justify-center gap-3 bg-sky-soft px-6 text-center"
-              >
-                <UserRound aria-hidden="true" className="h-10 w-10 text-brand" />
-                <p className="font-display text-sm font-bold text-navy">
-                  Espaço reservado para a foto oficial do Dr. Jadir
+              <div className="border-t border-border bg-card p-5">
+                <p className="font-display text-base font-extrabold text-navy">
+                  Dr. Jadir dos Santos Lima
                 </p>
-                <p className="text-xs leading-relaxed text-muted-foreground">
-                  Adicione o arquivo em <code>public/</code> e informe o caminho em
-                  <code> DOCTOR_PHOTO_URL</code>.
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Diretor Técnico · CRM/SC 7870 · RQE 26814
                 </p>
               </div>
-            )}
-            <div className="border-t border-border bg-card p-5">
-              <p className="font-display text-base font-extrabold text-navy">Dr. Jadir</p>
-              <p className="mt-1 text-sm text-muted-foreground">
-                Diretor Técnico · Medicina do Trabalho
+            </div>
+
+            <div className="mt-4 overflow-hidden rounded-2xl border border-border shadow-soft">
+              <img
+                src={palestraAsset.url}
+                alt="Dr. Jadir palestrando na X Conferência Nacional de Medicina do Trabalho"
+                width={1920}
+                height={1078}
+                loading="lazy"
+                decoding="async"
+                className="aspect-[16/9] w-full object-cover"
+              />
+              <p className="flex items-center gap-2 bg-card px-4 py-3 text-xs text-muted-foreground">
+                <Mic aria-hidden="true" className="h-3.5 w-3.5 shrink-0 text-brand" />
+                Palestrante na X Conferência Nacional de Medicina do Trabalho
               </p>
             </div>
           </div>
