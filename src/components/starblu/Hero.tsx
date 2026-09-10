@@ -1,6 +1,6 @@
 import { CheckCircle2, MapPin, ShieldCheck } from "lucide-react";
 
-import heroImage from "@/assets/hero-starblu.jpg";
+import heroAsset from "@/assets/starblu-consulta.jpg.asset.json";
 import { CtaButton } from "@/components/starblu/CtaButton";
 import { Reveal } from "@/components/starblu/Reveal";
 
@@ -61,19 +61,19 @@ export function Hero() {
         <Reveal delay={140} className="relative">
           <div className="relative overflow-hidden rounded-3xl border border-navy-foreground/12 bg-navy-deep/40 shadow-card">
             <img
-              src={heroImage}
-              alt="Equipe de medicina ocupacional e segurança do trabalho da Starblu"
-              width={1280}
-              height={1600}
+              src={heroAsset.url}
+              alt="Atendimento em medicina ocupacional na Starblu, em Blumenau"
+              width={1920}
+              height={1078}
               fetchPriority="high"
               decoding="async"
-              className="aspect-[4/5] w-full object-cover object-top sm:aspect-[5/4] lg:aspect-[4/5]"
+              className="aspect-[4/5] w-full object-cover object-[70%_center] sm:aspect-[16/10] lg:aspect-[4/5]"
             />
             <div
               aria-hidden="true"
-              className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-navy-deep/85 to-transparent"
+              className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-navy-deep via-navy-deep/60 to-transparent"
             />
-            <div className="absolute inset-x-4 bottom-4 rounded-2xl border border-navy-foreground/12 bg-navy-deep/75 p-4 backdrop-blur-sm">
+            <div className="absolute inset-x-4 bottom-4 rounded-2xl border border-navy-foreground/12 bg-navy-deep/70 p-4 backdrop-blur-sm">
               <p className="text-sm font-semibold text-navy-foreground">
                 SST simples, completo e próximo da sua empresa.
               </p>
