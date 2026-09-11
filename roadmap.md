@@ -7,4 +7,6 @@
 - [x] SEO local + JSON-LD
 - [x] Fotos reais do Dr. Jadir aplicadas (hero, autoridade técnica, palestra, diagnóstico)
 - [x] Logo oficial Starblu aplicada no header/footer e no favicon
-- [ ] Aguardando do cliente: número de WhatsApp, contato, depoimentos reais, logo em arquivo vetorial, URL do webhook e IDs de tracking
+- [x] Avaliações reais do Google publicadas na prova social (Gustavo, Jonathan, Michael)
+- [x] Novas fotos oficiais do Dr. Jadir aplicadas com enquadramento fechado e ajuste de nitidez/contraste
+- [ ] Aguardando do cliente: número de WhatsApp, contato, logo em arquivo vetorial, URL do webhook e IDs de tracking
