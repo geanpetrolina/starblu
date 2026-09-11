@@ -77,7 +77,15 @@ export function SocialProof() {
                 delay={index * 70}
                 className="h-full rounded-2xl border border-border bg-card p-6 shadow-soft"
               >
-                <Quote aria-hidden="true" className="h-6 w-6 text-brand/45" />
+                <div className="flex items-center gap-2">
+                  <span aria-hidden="true" className="flex items-center gap-0.5 text-brand">
+                    {Array.from({ length: 5 }).map((_, star) => (
+                      <Star key={star} className="h-3.5 w-3.5 fill-current" />
+                    ))}
+                  </span>
+                  <span className="sr-only">Avaliação 5 de 5 estrelas</span>
+                  <Quote aria-hidden="true" className="ml-auto h-5 w-5 text-brand/35" />
+                </div>
                 <blockquote className="mt-3 text-sm leading-relaxed text-navy">
                   {item.quote}
                 </blockquote>
