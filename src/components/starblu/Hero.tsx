@@ -1,6 +1,6 @@
 import { CheckCircle2, MapPin, ShieldCheck } from "lucide-react";
 
-import heroAsset from "@/assets/starblu-consulta.jpg.asset.json";
+import heroAsset from "@/assets/dr-jadir-consultorio.jpg.asset.json";
 import { CtaButton } from "@/components/starblu/CtaButton";
 import { Reveal } from "@/components/starblu/Reveal";
 
@@ -62,12 +62,12 @@ export function Hero() {
           <div className="relative overflow-hidden rounded-3xl border border-navy-foreground/12 bg-navy-deep/40 shadow-card">
             <img
               src={heroAsset.url}
-              alt="Atendimento em medicina ocupacional na Starblu, em Blumenau"
-              width={1920}
-              height={1078}
+              alt="Dr. Jadir dos Santos Lima, Diretor Técnico da Starblu, no consultório em Blumenau"
+              width={1200}
+              height={1500}
               fetchPriority="high"
               decoding="async"
-              className="aspect-[4/5] w-full object-cover object-[70%_center] sm:aspect-[16/10] lg:aspect-[4/5]"
+              className="aspect-[4/5] w-full object-cover object-[50%_20%] sm:aspect-[16/10] lg:aspect-[4/5]"
             />
             <div
               aria-hidden="true"

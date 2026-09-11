@@ -1,6 +1,6 @@
 import { BadgeCheck, Gavel, Landmark, Mic, Stethoscope, UserRound } from "lucide-react";
 
-import retratoAsset from "@/assets/dr-jadir-retrato.jpg.asset.json";
+import retratoAsset from "@/assets/dr-jadir-retrato-oficial.jpg.asset.json";
 import palestraAsset from "@/assets/dr-jadir-palestra.jpg.asset.json";
 import { Reveal } from "@/components/starblu/Reveal";
 import { SectionHeading } from "@/components/starblu/SectionHeading";
@@ -23,11 +23,11 @@ export function TechnicalAuthority() {
               <img
                 src={retratoAsset.url}
                 alt="Dr. Jadir dos Santos Lima, Diretor Técnico da Starblu, no consultório da empresa"
-                width={1920}
-                height={1078}
+                width={1200}
+                height={1500}
                 loading="lazy"
                 decoding="async"
-                className="aspect-[4/5] w-full object-cover object-[52%_top]"
+                className="aspect-[4/5] w-full object-cover object-[50%_top]"
               />
               <div className="border-t border-border bg-card p-5">
                 <p className="font-display text-base font-extrabold text-navy">
