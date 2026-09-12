@@ -1,6 +1,6 @@
 import { CheckCircle2, MapPin, ShieldCheck } from "lucide-react";
 
-import heroAsset from "@/assets/dr-jadir-consultorio-v2.jpg.asset.json";
+import heroAsset from "@/assets/dr-jadir-hero-v3.jpg.asset.json";
 import { CtaButton } from "@/components/starblu/CtaButton";
 import { Reveal } from "@/components/starblu/Reveal";
 
