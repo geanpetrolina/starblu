@@ -11,6 +11,9 @@ const solutions = [
   "Treinamentos NR",
 ];
 
+const mapQuery =
+  "R. Dr. Luiz de Freitas Melro, 395 - Centro, Blumenau - SC, 89010-310";
+
 export function Footer() {
   const { contact, brand } = siteConfig;
   const year = new Date().getFullYear();

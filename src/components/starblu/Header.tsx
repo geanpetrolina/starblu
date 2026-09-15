@@ -51,6 +51,16 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
+          {siteConfig.contact.phone ? (
+            <a
+              href={`tel:+55${siteConfig.contact.phone.replace(/\D/g, "")}`}
+              onClick={() => trackEvent("click_cta", { location: "header_phone" })}
+              className="hidden items-center gap-2 text-sm font-semibold text-navy transition-colors hover:text-brand sm:inline-flex"
+            >
+              <Phone aria-hidden="true" className="h-4 w-4" />
+              {siteConfig.contact.phone}
+            </a>
+          ) : null}
           {hasWhatsapp() ? (
             <a
               href={whatsappLink()}
