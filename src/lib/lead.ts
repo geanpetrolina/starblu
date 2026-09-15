@@ -47,25 +47,9 @@ export function buildLeadPayload(input: LeadInput): LeadPayload {
 
 export async function submitLead(input: LeadInput): Promise<LeadResult> {
   const payload = buildLeadPayload(input);
-  const endpoint = siteConfig.webhookUrl;
-
-  if (!endpoint) {
-    // Placeholder ainda não preenchido: registramos localmente para debug.
-    console.info("[lead] WEBHOOK_URL não configurado. Payload pronto:", payload);
-    return { status: "not_configured", payload };
-  }
 
   try {
-    const response = await fetch(endpoint, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-
-    if (!response.ok) {
-      return { status: "error", message: `Resposta ${response.status} do servidor.` };
-    }
-
+    await sendLead({ data: payload });
     return { status: "sent" };
   } catch (error) {
     return {
