@@ -7,7 +7,7 @@
  * fictício.
  */
 
-import { siteConfig } from "@/config/site";
+import { sendLead } from "@/lib/lead.functions";
 import { captureCampaignParams, type CampaignParams } from "@/lib/tracking";
 
 export interface LeadInput {
