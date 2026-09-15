@@ -45,15 +45,15 @@ export const siteConfig: SiteConfig = {
   },
 
   contact: {
-    // Preencher com os dados reais da Starblu.
-    phone: "",
+    phone: "(47) 3234-5796",
     email: "",
-    address: "",
+    address:
+      "R. Dr. Luiz de Freitas Melro, 395 - 5º andar, sala 505 - Centro, Blumenau - SC, 89010-310",
   },
 
   /**
-   * Endpoint que receberá os leads (CRM, automação, planilha...).
-   * Vazio = o lead não é enviado a nenhum endpoint.
+   * Os leads são enviados via server function para o CRM
+   * (ver src/lib/lead-webhook.server.ts).
    */
   webhookUrl: "",
 
