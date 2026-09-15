@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, Phone } from "lucide-react";
 
 import { CtaButton } from "@/components/starblu/CtaButton";
+import { siteConfig } from "@/config/site";
 import { Logo } from "@/components/starblu/Logo";
 import { cn } from "@/lib/utils";
 import { hasWhatsapp, whatsappLink } from "@/lib/whatsapp";
