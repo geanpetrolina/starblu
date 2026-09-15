@@ -1,16 +1,36 @@
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, Phone } from "lucide-react";
 
+import { siteConfig } from "@/config/site";
 import { trackEvent } from "@/lib/tracking";
 import { hasWhatsapp, whatsappLink } from "@/lib/whatsapp";
 
 /**
  * WhatsApp flutuante: discreto no desktop (canto inferior direito) e
- * barra fixa no mobile. O número é configurado em `siteConfig.whatsapp`.
+ * barra fixa no mobile. Sem WhatsApp configurado, exibe o telefone fixo.
  */
 export function WhatsAppButton() {
-  if (!hasWhatsapp()) return null;
+  const phone = siteConfig.contact.phone;
+
+  if (!hasWhatsapp()) {
+    if (!phone) return null;
+    const tel = `tel:+55${phone.replace(/\D/g, "")}`;
+
+    return (
+      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-background/95 px-4 py-3 backdrop-blur-md sm:hidden">
+        <a
+          href={tel}
+          onClick={() => trackEvent("click_cta", { location: "mobile_bar_phone" })}
+          className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3.5 font-display text-sm font-bold tracking-[0.06em] text-primary-foreground uppercase shadow-brand"
+        >
+          <Phone aria-hidden="true" className="h-[1.1rem] w-[1.1rem]" />
+          Ligar {phone}
+        </a>
+      </div>
+    );
+  }
 
   const href = whatsappLink();
+
 
   return (
     <>
