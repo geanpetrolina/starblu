@@ -11,5 +11,11 @@ export default defineConfig({
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
+
+    // Hospedagem compartilhada (Hostinger) não roda Node: a landing page é
+    // pré-renderizada em HTML estático no build. O resultado publicável fica
+    // em `.output/public` (index.html + assets + lead.php + .htaccess).
+    pages: [{ path: "/" }],
+    prerender: { enabled: true, autoStaticPathsDiscovery: false },
   },
 });
