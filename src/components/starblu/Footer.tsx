@@ -75,28 +75,6 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="shell pb-12">
-        <h2 className="font-display text-sm font-bold tracking-[0.12em] text-navy-foreground uppercase">
-          Onde estamos
-        </h2>
-        <div className="mt-4 overflow-hidden rounded-2xl border border-navy-foreground/10">
-          <iframe
-            title="Mapa da Starblu em Blumenau"
-            src={`https://www.google.com/maps?q=${encodeURIComponent(mapQuery)}&hl=pt-BR&z=17&output=embed`}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="h-64 w-full border-0 sm:h-80"
-          />
-        </div>
-        <a
-          href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery)}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-3 inline-block text-sm text-navy-foreground/70 transition-colors hover:text-sky"
-        >
-          Abrir no Google Maps
-        </a>
-      </div>
 
       <div className="border-t border-navy-foreground/10">
         <div className="shell flex flex-col gap-3 py-5 text-xs text-navy-foreground/55 sm:flex-row sm:items-center sm:justify-between">

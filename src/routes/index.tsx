@@ -7,6 +7,7 @@ import { FinalCta } from "@/components/starblu/FinalCta";
 import { Footer } from "@/components/starblu/Footer";
 import { Header } from "@/components/starblu/Header";
 import { Hero } from "@/components/starblu/Hero";
+import { LocationMap } from "@/components/starblu/LocationMap";
 import { HowItWorks } from "@/components/starblu/HowItWorks";
 import { PainSection } from "@/components/starblu/PainSection";
 import { Services } from "@/components/starblu/Services";
@@ -97,6 +98,7 @@ function LandingPage() {
         <SocialProof />
         <Faq />
         <FinalCta />
+        <LocationMap />
       </main>
       <Footer />
       <WhatsAppButton />
