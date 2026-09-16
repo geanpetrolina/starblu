@@ -2,13 +2,15 @@
  * Função centralizada de envio de lead.
  *
  * O payload é montado sempre da mesma forma, independente de onde o
- * formulário for usado. Se `webhookUrl` não estiver configurado, o envio
- * não acontece e o chamador é informado — nunca enviamos para um endpoint
- * fictício.
+ * formulário for usado, e enviado para o endpoint PHP `/lead.php`, que roda
+ * na própria hospedagem e encaminha os dados ao CRM. Nenhum token de
+ * webhook trafega no JavaScript do navegador.
  */
 
-import { sendLead } from "@/lib/lead.functions";
 import { captureCampaignParams, type CampaignParams } from "@/lib/tracking";
+
+/** Endpoint server-side responsável por encaminhar o lead ao CRM. */
+export const LEAD_ENDPOINT = "/lead.php";
 
 export interface LeadInput {
   name: string;
@@ -49,7 +51,23 @@ export async function submitLead(input: LeadInput): Promise<LeadResult> {
   const payload = buildLeadPayload(input);
 
   try {
-    await sendLead({ data: payload });
+    const response = await fetch(LEAD_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    const data = (await response.json().catch(() => null)) as
+      | { ok?: boolean; error?: string }
+      | null;
+
+    if (!response.ok || !data?.ok) {
+      return {
+        status: "error",
+        message: data?.error ?? `Falha no envio (HTTP ${response.status}).`,
+      };
+    }
+
     return { status: "sent" };
   } catch (error) {
     return {
