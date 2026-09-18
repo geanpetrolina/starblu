@@ -19,10 +19,10 @@ export function TechnicalAuthority() {
           <div className="relative mx-auto max-w-sm">
             <div className="overflow-hidden rounded-3xl border border-border bg-surface shadow-card">
               <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-10%20at%2017.49.08-56KIkk6cOccyIv2fDcTEKhcjX1F5ze.jpeg"
-                alt="Dr. Jadir dos Santos Lima, Diretor Técnico da Starblu, no consultório da empresa"
-                width={1200}
-                height={1500}
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-aH1KVT0Og2WYsxVqGSmWrlxybqt7o3.png"
+                alt="Dr. Jadir dos Santos Lima, médico do trabalho, usando jaleco e estetoscópio"
+                width={400}
+                height={400}
                 loading="lazy"
                 decoding="async"
                 className="aspect-[4/5] w-full object-cover object-[50%_top]"
