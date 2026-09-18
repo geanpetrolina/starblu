@@ -8,6 +8,7 @@ import { Footer } from "@/components/starblu/Footer";
 import { Header } from "@/components/starblu/Header";
 import { Hero } from "@/components/starblu/Hero";
 import { HowItWorks } from "@/components/starblu/HowItWorks";
+import { LocationMap } from "@/components/starblu/LocationMap";
 import { PainSection } from "@/components/starblu/PainSection";
 import { Services } from "@/components/starblu/Services";
 import { SocialProof } from "@/components/starblu/SocialProof";
@@ -95,6 +96,7 @@ function LandingPage() {
         <HowItWorks />
         <DiagnosticSection />
         <SocialProof />
+        <LocationMap />
         <Faq />
         <FinalCta />
       </main>
