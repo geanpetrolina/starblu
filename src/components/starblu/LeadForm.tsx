@@ -3,6 +3,7 @@ import { CheckCircle2, Loader2, ShieldCheck } from "lucide-react";
 
 import { employeeRanges, leadServices } from "@/config/site";
 import { submitLead, type LeadInput } from "@/lib/lead";
+import { leadWhatsAppMessage, whatsappLink } from "@/lib/whatsapp";
 import { trackEvent } from "@/lib/tracking";
 import { cn } from "@/lib/utils";
 
@@ -29,8 +30,7 @@ export function LeadForm({ className }: { className?: string }) {
   const startedRef = useRef(false);
 
   const update =
-    (field: keyof LeadInput) =>
-    (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    (field: keyof LeadInput) => (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
       if (!startedRef.current) {
         startedRef.current = true;
         trackEvent("form_start", { form_id: "lead_form" });
@@ -55,6 +55,7 @@ export function LeadForm({ className }: { className?: string }) {
     }
 
     trackEvent("lead", { form_id: "lead_form", service: form.service });
+    window.location.href = whatsappLink(leadWhatsAppMessage(form));
     setStatus("success");
     setMessage(
       result.status === "not_configured"
@@ -87,9 +88,7 @@ export function LeadForm({ className }: { className?: string }) {
       noValidate={false}
       className={cn("rounded-2xl border border-border bg-card p-6 shadow-card lg:p-8", className)}
     >
-      <h3 className="font-display text-lg font-extrabold text-navy">
-        Solicitar atendimento
-      </h3>
+      <h3 className="font-display text-lg font-extrabold text-navy">Solicitar atendimento</h3>
       <p className="mt-1 text-sm text-muted-foreground">
         Preencha os dados e um especialista entra em contato.
       </p>
