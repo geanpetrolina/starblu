@@ -14,9 +14,9 @@ export function Hero() {
     <section id="top" className="navy-panel relative overflow-hidden">
       <div aria-hidden="true" className="grid-lines absolute inset-0 opacity-70" />
 
-      <div className="shell relative flex max-w-4xl flex-col gap-8 py-10 lg:gap-10 lg:py-24">
-        <div className="contents lg:block">
-          <Reveal className="order-1">
+      <div className="shell relative flex max-w-4xl flex-col gap-8 py-10 lg:max-w-7xl lg:gap-10 lg:py-24">
+        <div className="contents lg:grid lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-x-16 lg:gap-y-0">
+          <Reveal className="order-1 lg:col-start-1 lg:row-start-1">
             <p className="eyebrow text-sky">
               <span aria-hidden="true" className="h-px w-6 bg-current" />
               Medicina Ocupacional · SST · eSocial
@@ -33,7 +33,7 @@ export function Hero() {
             </p>
           </Reveal>
 
-          <Reveal delay={140} className="relative order-2 lg:order-none lg:mt-8">
+          <Reveal delay={140} className="relative order-2 lg:col-start-2 lg:row-span-4 lg:row-start-1 lg:order-none lg:mt-0">
             <div className="relative overflow-hidden rounded-3xl border border-navy-foreground/12 bg-navy-deep/40 shadow-card">
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dr-jadir-hero-v3-w1heUziPchnYHBMnyKec2ZiND2qW4q.jpg"
@@ -61,7 +61,7 @@ export function Hero() {
 
           <Reveal
             delay={200}
-            className="order-3 flex flex-col gap-3 sm:flex-row sm:items-center lg:order-none"
+            className="order-3 flex flex-col gap-3 sm:flex-row sm:items-center lg:col-start-1 lg:row-start-2 lg:order-none"
           >
             <CtaButton trackingId="hero_primary" href="#contato">
               Quero falar com um especialista
@@ -71,7 +71,7 @@ export function Hero() {
             </CtaButton>
           </Reveal>
 
-          <Reveal delay={260} className="order-4 lg:order-none lg:mt-9">
+          <Reveal delay={260} className="order-4 lg:col-start-1 lg:row-start-3 lg:order-none lg:mt-9">
             <ul className="flex flex-wrap gap-x-6 gap-y-3">
               {microProofs.map(({ icon: Icon, label }) => (
                 <li
