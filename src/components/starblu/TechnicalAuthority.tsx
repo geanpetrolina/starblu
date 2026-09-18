@@ -1,7 +1,5 @@
-import { BadgeCheck, Gavel, Landmark, Mic, Stethoscope, UserRound } from "lucide-react";
+import { BadgeCheck, Gavel, Landmark, Stethoscope, UserRound } from "lucide-react";
 
-import retratoAsset from "@/assets/dr-jadir-retrato-oficial.jpg.asset.json";
-import palestraAsset from "@/assets/dr-jadir-palestra.jpg.asset.json";
 import { Reveal } from "@/components/starblu/Reveal";
 import { SectionHeading } from "@/components/starblu/SectionHeading";
 
@@ -21,10 +19,10 @@ export function TechnicalAuthority() {
           <div className="relative mx-auto max-w-sm">
             <div className="overflow-hidden rounded-3xl border border-border bg-surface shadow-card">
               <img
-                src={retratoAsset.url}
-                alt="Dr. Jadir dos Santos Lima, Diretor Técnico da Starblu, no consultório da empresa"
-                width={1200}
-                height={1500}
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-aH1KVT0Og2WYsxVqGSmWrlxybqt7o3.png"
+                alt="Dr. Jadir dos Santos Lima, médico do trabalho, usando jaleco e estetoscópio"
+                width={400}
+                height={400}
                 loading="lazy"
                 decoding="async"
                 className="aspect-[4/5] w-full object-cover object-[50%_top]"
@@ -39,21 +37,6 @@ export function TechnicalAuthority() {
               </div>
             </div>
 
-            <div className="mt-4 overflow-hidden rounded-2xl border border-border shadow-soft">
-              <img
-                src={palestraAsset.url}
-                alt="Dr. Jadir palestrando na X Conferência Nacional de Medicina do Trabalho"
-                width={1920}
-                height={1078}
-                loading="lazy"
-                decoding="async"
-                className="aspect-[16/9] w-full object-cover"
-              />
-              <p className="flex items-center gap-2 bg-card px-4 py-3 text-xs text-muted-foreground">
-                <Mic aria-hidden="true" className="h-3.5 w-3.5 shrink-0 text-brand" />
-                Palestrante na X Conferência Nacional de Medicina do Trabalho
-              </p>
-            </div>
           </div>
         </Reveal>
 

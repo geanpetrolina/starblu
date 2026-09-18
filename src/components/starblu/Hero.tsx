@@ -1,6 +1,5 @@
 import { CheckCircle2, MapPin, ShieldCheck } from "lucide-react";
 
-import heroAsset from "@/assets/dr-jadir-hero-v3.jpg.asset.json";
 import { CtaButton } from "@/components/starblu/CtaButton";
 import { Reveal } from "@/components/starblu/Reveal";
 
@@ -15,26 +14,55 @@ export function Hero() {
     <section id="top" className="navy-panel relative overflow-hidden">
       <div aria-hidden="true" className="grid-lines absolute inset-0 opacity-70" />
 
-      <div className="shell relative grid items-center gap-12 py-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:py-24">
-        <div>
-          <Reveal>
+      <div className="shell relative flex max-w-4xl flex-col gap-8 py-10 lg:max-w-7xl lg:gap-10 lg:py-24">
+        <div className="contents lg:grid lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-x-16 lg:gap-y-0">
+          <Reveal className="order-1 lg:col-start-1 lg:row-start-1">
             <p className="eyebrow text-sky">
               <span aria-hidden="true" className="h-px w-6 bg-current" />
               Medicina Ocupacional · SST · eSocial
             </p>
-            <h1 className="mt-5 text-3xl font-extrabold leading-[1.1] text-navy-foreground sm:text-4xl lg:text-[3.35rem]">
+            <h1 className="mt-4 text-[2rem] font-extrabold leading-[1.08] text-navy-foreground sm:text-4xl lg:mt-5 lg:text-[3.35rem]">
               Medicina e Segurança do Trabalho em Blumenau
             </h1>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-navy-foreground/80 sm:text-lg">
+            <h2 className="mt-4 max-w-xl text-base font-semibold leading-relaxed text-navy-foreground/90 sm:text-lg">
               Deixe sua empresa em dia com SST, eSocial e obrigações trabalhistas sem complicação.
-            </p>
-            <p className="mt-3 max-w-xl text-sm leading-relaxed text-navy-foreground/65">
+            </h2>
+            <p className="mt-2 max-w-xl text-sm leading-relaxed text-navy-foreground/65 lg:mt-3">
               Exames ocupacionais, laudos, PGR, PCMSO, eSocial, treinamentos e consultoria em um
               único parceiro.
             </p>
           </Reveal>
 
-          <Reveal delay={120} className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <Reveal delay={140} className="relative order-2 lg:col-start-2 lg:row-span-4 lg:row-start-1 lg:order-none lg:mt-0">
+            <div className="relative overflow-hidden rounded-3xl border border-navy-foreground/12 bg-navy-deep/40 shadow-card">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dr-jadir-hero-v3-w1heUziPchnYHBMnyKec2ZiND2qW4q.jpg"
+                alt="Dr. Jadir dos Santos Lima, Diretor Técnico da Starblu, em seu consultório"
+                width={1200}
+                height={1500}
+                fetchPriority="high"
+                decoding="async"
+                className="aspect-[4/5] w-full object-cover object-[50%_18%] sm:aspect-[16/10] lg:aspect-[4/5]"
+              />
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 bg-gradient-to-t from-navy-deep/85 via-transparent to-navy-deep/10"
+              />
+              <div className="absolute inset-x-4 bottom-4 rounded-2xl border border-navy-foreground/12 bg-navy-deep/70 p-4 backdrop-blur-md">
+                <p className="text-sm font-semibold text-navy-foreground">
+                  SST simples, completo e próximo da sua empresa.
+                </p>
+                <p className="mt-1 text-xs leading-relaxed text-navy-foreground/70">
+                  Atendimento local, equipe especializada e acompanhamento contínuo.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal
+            delay={200}
+            className="order-3 flex flex-col gap-3 sm:flex-row sm:items-center lg:col-start-1 lg:row-start-2 lg:order-none"
+          >
             <CtaButton trackingId="hero_primary" href="#contato">
               Quero falar com um especialista
             </CtaButton>
@@ -43,7 +71,7 @@ export function Hero() {
             </CtaButton>
           </Reveal>
 
-          <Reveal delay={200} className="mt-9">
+          <Reveal delay={260} className="order-4 lg:col-start-1 lg:row-start-3 lg:order-none lg:mt-9">
             <ul className="flex flex-wrap gap-x-6 gap-y-3">
               {microProofs.map(({ icon: Icon, label }) => (
                 <li
@@ -57,32 +85,6 @@ export function Hero() {
             </ul>
           </Reveal>
         </div>
-
-        <Reveal delay={140} className="relative">
-          <div className="relative overflow-hidden rounded-3xl border border-navy-foreground/12 bg-navy-deep/40 shadow-card">
-            <img
-              src={heroAsset.url}
-              alt="Dr. Jadir dos Santos Lima, Diretor Técnico da Starblu, no consultório em Blumenau"
-              width={1200}
-              height={1500}
-              fetchPriority="high"
-              decoding="async"
-              className="aspect-[4/5] w-full object-cover object-[50%_20%] sm:aspect-[16/10] lg:aspect-[4/5]"
-            />
-            <div
-              aria-hidden="true"
-              className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-navy-deep via-navy-deep/60 to-transparent"
-            />
-            <div className="absolute inset-x-4 bottom-4 rounded-2xl border border-navy-foreground/12 bg-navy-deep/70 p-4 backdrop-blur-sm">
-              <p className="text-sm font-semibold text-navy-foreground">
-                SST simples, completo e próximo da sua empresa.
-              </p>
-              <p className="mt-1 text-xs leading-relaxed text-navy-foreground/70">
-                Atendimento local, equipe especializada e acompanhamento contínuo das obrigações.
-              </p>
-            </div>
-          </div>
-        </Reveal>
       </div>
     </section>
   );

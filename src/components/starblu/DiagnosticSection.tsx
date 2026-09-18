@@ -1,6 +1,5 @@
 import { ClipboardCheck } from "lucide-react";
 
-import atendimentoAsset from "@/assets/starblu-atendimento.jpg.asset.json";
 import { CtaButton } from "@/components/starblu/CtaButton";
 import { Reveal } from "@/components/starblu/Reveal";
 
@@ -18,7 +17,7 @@ export function DiagnosticSection() {
         <Reveal className="navy-panel relative overflow-hidden rounded-3xl">
           <div aria-hidden="true" className="grid-lines absolute inset-0 opacity-60" />
 
-          <div className="relative grid items-stretch lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="relative grid items-stretch lg:grid-cols-2">
             <div className="px-6 py-12 lg:px-12 lg:py-16">
               <p className="eyebrow text-sky">
                 <span aria-hidden="true" className="h-px w-6 bg-current" />
@@ -53,10 +52,10 @@ export function DiagnosticSection() {
 
             <div className="relative min-h-64 lg:min-h-full">
               <img
-                src={atendimentoAsset.url}
-                alt="Especialista da Starblu orientando uma responsável de RH sobre exames e laudos ocupacionais"
-                width={1920}
-                height={1078}
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image.png-zaONDLxox6f8JQKVXd27ULD5rb1Uc2.jpeg"
+                alt="Dr. Jadir dos Santos Lima em seu consultório, usando jaleco e estetoscópio"
+                width={1600}
+                height={1600}
                 loading="lazy"
                 decoding="async"
                 className="h-full w-full object-cover object-[60%_center]"
