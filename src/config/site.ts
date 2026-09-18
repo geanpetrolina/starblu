@@ -29,7 +29,8 @@ export const siteConfig: SiteConfig = {
      * "/starblu-logo.png") e informe o caminho aqui.
      * Enquanto estiver vazio, é exibido o wordmark provisório.
      */
-    logoUrl: "",
+    logoUrl:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-4mnKYZQ6iHx4semWTod6GM7Wj88zJ8.png",
     logoAlt: "Starblu — Medicina e Segurança do Trabalho",
     region: "Blumenau e região",
   },
