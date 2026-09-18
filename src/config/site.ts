@@ -40,9 +40,8 @@ export const siteConfig: SiteConfig = {
    * Ex.: "5547999999999". Vazio = botão abre em modo não configurado.
    */
   whatsapp: {
-    number: "",
-    message:
-      "Olá, gostaria de falar com um especialista da Starblu sobre SST para minha empresa.",
+    number: "554732345796",
+    message: "Olá, gostaria de falar com um especialista da Starblu sobre SST para minha empresa.",
   },
 
   contact: {
