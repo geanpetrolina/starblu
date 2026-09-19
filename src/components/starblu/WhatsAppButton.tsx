@@ -2,9 +2,9 @@ import { useState } from "react";
 import { ArrowRight, MessageCircle, Phone, X } from "lucide-react";
 
 import { employeeRanges, leadServices, siteConfig } from "@/config/site";
+import { submitLead, type LeadInput } from "@/lib/lead";
 import { trackEvent } from "@/lib/tracking";
 import { hasWhatsapp, leadWhatsAppMessage, whatsappLink } from "@/lib/whatsapp";
-import type { LeadInput } from "@/lib/lead";
 
 const emptyLead: LeadInput = {
   name: "",
@@ -64,7 +64,7 @@ export function WhatsAppButton() {
     trackEvent("click_whatsapp", { location: "floating" });
   }
 
-  function next() {
+  async function next() {
     const question = questions[step];
     if (!lead[question.field].trim()) {
       setError("Preencha este campo para continuar.");
@@ -73,6 +73,12 @@ export function WhatsAppButton() {
     setError("");
     if (step < questions.length - 1) {
       setStep((current) => current + 1);
+      return;
+    }
+    setError("");
+    const result = await submitLead(lead);
+    if (result.status === "error") {
+      setError("Não foi possível registrar seus dados agora. Tente novamente.");
       return;
     }
     trackEvent("lead", { form_id: "whatsapp_popup", service: lead.service });
