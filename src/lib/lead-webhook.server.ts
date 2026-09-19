@@ -8,7 +8,7 @@ import type { LeadPayload } from "@/lib/lead";
 const CRM_WEBHOOK_URL =
   "https://starblu-leads-v4.fly.dev/webhook/lead?token=3zUBXhq3E4hac_3Q0zoWUS2RfWsTXeOC";
 const SHEETS_WEBHOOK_URL =
-  "https://script.google.com/a/macros/v4company.com/s/AKfycbygrYIg2E8JOsYE0_JpcYUaWRZoiRTf3rLj7JXRvW3gBzaT_yh16GC4PCz6OWY8epi7/exec";
+  "https://script.google.com/macros/s/AKfycbygrYIg2E8JOsYE0_JpcYUaWRZoiRTf3rLj7JXRvW3gBzaT_yh16GC4PCz6OWY8epi7/exec";
 
 async function postLead(url: string, payload: LeadPayload, destination: string): Promise<void> {
   const response = await fetch(url, {
@@ -24,22 +24,11 @@ async function postLead(url: string, payload: LeadPayload, destination: string):
 }
 
 export async function forwardLead(payload: LeadPayload): Promise<void> {
-  const results = await Promise.allSettled([
-    postLead(CRM_WEBHOOK_URL, payload, "CRM starblu-leads-v4"),
-    postLead(SHEETS_WEBHOOK_URL, payload, "Google Sheets"),
-  ]);
+  await postLead(CRM_WEBHOOK_URL, payload, "CRM starblu-leads-v4");
 
-  const failures = results.filter(
-    (result): result is PromiseRejectedResult => result.status === "rejected",
-  );
-
-  if (failures.length > 0) {
-    throw new Error(
-      failures
-        .map((failure) =>
-          failure.reason instanceof Error ? failure.reason.message : "Falha ao enviar lead",
-        )
-        .join("; "),
-    );
+  try {
+    await postLead(SHEETS_WEBHOOK_URL, payload, "Google Sheets");
+  } catch (error) {
+    console.error("[lead] Falha ao sincronizar Google Sheets:", error);
   }
 }
