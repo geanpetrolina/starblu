@@ -11,7 +11,7 @@ export function leadWhatsAppMessage(input: LeadInput): string {
     `Empresa: ${input.company}`,
     `Funcionários: ${input.employees}`,
     `Necessidade: ${input.service}`,
-  ].join("\\n");
+  ].join("\n");
 }
 
 /** Monta o link do WhatsApp com a mensagem pré-preenchida. */
