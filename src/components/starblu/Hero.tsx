@@ -15,25 +15,28 @@ export function Hero() {
       <div aria-hidden="true" className="grid-lines absolute inset-0 opacity-70" />
 
       <div className="shell relative flex max-w-4xl flex-col gap-8 py-10 lg:max-w-7xl lg:gap-10 lg:py-24">
-        <div className="contents lg:grid lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-x-16 lg:gap-y-0">
-          <Reveal className="order-1 lg:col-start-1 lg:row-start-1">
+        <div className="contents lg:grid lg:grid-cols-2 lg:items-center lg:gap-x-16 lg:gap-y-0">
+          <Reveal className="order-1 lg:col-start-1 lg:row-start-1 lg:pt-8">
             <p className="eyebrow text-sky">
               <span aria-hidden="true" className="h-px w-6 bg-current" />
               Medicina Ocupacional · SST · eSocial
             </p>
-            <h1 className="mt-4 text-[2rem] font-extrabold leading-[1.08] text-navy-foreground sm:text-4xl lg:mt-5 lg:text-[3.35rem]">
+            <h1 className="mt-5 text-[2.15rem] font-extrabold leading-[1.06] text-navy-foreground sm:text-4xl lg:mt-6 lg:text-[3.65rem]">
               Medicina e Segurança do Trabalho em Blumenau
             </h1>
-            <h2 className="mt-4 max-w-xl text-base font-semibold leading-relaxed text-navy-foreground/90 sm:text-lg">
+            <h2 className="mt-6 max-w-xl text-base font-semibold leading-[1.75] text-navy-foreground/90 sm:text-lg">
               Deixe sua empresa em dia com SST, eSocial e obrigações trabalhistas sem complicação.
             </h2>
-            <p className="mt-2 max-w-xl text-sm leading-relaxed text-navy-foreground/65 lg:mt-3">
+            <p className="mt-4 max-w-xl text-sm leading-[1.8] text-navy-foreground/65 lg:mt-5">
               Exames ocupacionais, laudos, PGR, PCMSO, eSocial, treinamentos e consultoria em um
               único parceiro.
             </p>
           </Reveal>
 
-          <Reveal delay={140} className="relative order-2 lg:col-start-2 lg:row-span-4 lg:row-start-1 lg:order-none lg:mt-0">
+          <Reveal
+            delay={140}
+            className="relative order-2 lg:col-start-2 lg:row-span-4 lg:row-start-1 lg:order-none lg:mt-0"
+          >
             <div className="relative overflow-hidden rounded-3xl border border-navy-foreground/12 bg-navy-deep/40 shadow-card">
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dr-jadir-hero-v3-w1heUziPchnYHBMnyKec2ZiND2qW4q.jpg"
@@ -61,7 +64,7 @@ export function Hero() {
 
           <Reveal
             delay={200}
-            className="order-3 flex flex-col gap-3 sm:flex-row sm:items-center lg:col-start-1 lg:row-start-2 lg:order-none"
+            className="order-3 flex flex-col gap-3 sm:flex-row sm:items-center lg:col-start-1 lg:row-start-2 lg:order-none lg:mt-8"
           >
             <CtaButton trackingId="hero_primary" href="#contato">
               Quero falar com um especialista
@@ -71,7 +74,10 @@ export function Hero() {
             </CtaButton>
           </Reveal>
 
-          <Reveal delay={260} className="order-4 lg:col-start-1 lg:row-start-3 lg:order-none lg:mt-9">
+          <Reveal
+            delay={260}
+            className="order-4 lg:col-start-1 lg:row-start-3 lg:order-none lg:mt-12"
+          >
             <ul className="flex flex-wrap gap-x-6 gap-y-3">
               {microProofs.map(({ icon: Icon, label }) => (
                 <li

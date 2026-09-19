@@ -9,6 +9,7 @@ const CRM_WEBHOOK_URL =
   "https://starblu-leads-v4.fly.dev/webhook/lead?token=3zUBXhq3E4hac_3Q0zoWUS2RfWsTXeOC";
 const SHEETS_WEBHOOK_URL =
   "https://script.google.com/macros/s/AKfycbygrYIg2E8JOsYE0_JpcYUaWRZoiRTf3rLj7JXRvW3gBzaT_yh16GC4PCz6OWY8epi7/exec";
+const MAKE_WEBHOOK_URL = "https://hook.us1.make.celonis.com/7ff0tgnk2f3se3hjkb7am7wwosfkw9ca";
 
 async function postLead(url: string, payload: LeadPayload, destination: string): Promise<void> {
   const response = await fetch(url, {
@@ -26,9 +27,21 @@ async function postLead(url: string, payload: LeadPayload, destination: string):
 export async function forwardLead(payload: LeadPayload): Promise<void> {
   await postLead(CRM_WEBHOOK_URL, payload, "CRM starblu-leads-v4");
 
-  try {
-    await postLead(SHEETS_WEBHOOK_URL, payload, "Google Sheets");
-  } catch (error) {
-    console.error("[lead] Falha ao sincronizar Google Sheets:", error);
-  }
+  const secondaryDestinations = [
+    [SHEETS_WEBHOOK_URL, "Google Sheets"],
+    [MAKE_WEBHOOK_URL, "Make"],
+  ] as const;
+
+  const results = await Promise.allSettled(
+    secondaryDestinations.map(([url, destination]) => postLead(url, payload, destination)),
+  );
+
+  results.forEach((result, index) => {
+    if (result.status === "rejected") {
+      console.error(
+        `[lead] Falha ao sincronizar ${secondaryDestinations[index][1]}:`,
+        result.reason,
+      );
+    }
+  });
 }
