@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { MessageCircle, Phone } from "lucide-react";
 
-import { CtaButton } from "@/components/starblu/CtaButton";
 import { siteConfig } from "@/config/site";
 import { Logo } from "@/components/starblu/Logo";
 import { cn } from "@/lib/utils";
@@ -74,9 +73,6 @@ export function Header() {
               WhatsApp
             </a>
           ) : null}
-          <CtaButton trackingId="header" href="#contato" size="md" className="hidden sm:inline-flex">
-            Falar com um especialista
-          </CtaButton>
         </div>
       </div>
     </header>
